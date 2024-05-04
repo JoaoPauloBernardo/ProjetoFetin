@@ -1,2 +1,2 @@
 # ProjetoFetin
-Projeto de aplicativo IOS de aviação e suporte para pilotos, feito em Swift. Feito para a Feira tecnologica do Inatel (Fetin).
+Projeto de aplicativo de aviação e suporte para pilotos, feito em Flutter/Dart. Feito para a Feira tecnologica do Inatel (Fetin).
