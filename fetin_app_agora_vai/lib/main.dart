@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 void main() async {
 
-  runApp(SafeArea(
+  runApp(SafeArea(  //! ISSO ESTA FAZENDO COM QUE OCORRA UM OVERFLOW
     child: MaterialApp(
       home: SplashPage(),
       theme: AppTheme.light,

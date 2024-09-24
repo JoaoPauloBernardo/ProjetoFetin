@@ -18,7 +18,7 @@ class _EscalasTesteFetin1State extends State<EscalasTesteFetin1> {
   bool _loading = true;
 
   Future<List<TodoModelJson>> ReadJsonData() async{
-    final jsondata = await rootBundle.loadString('assets/todo_models.json');
+    final jsondata = await rootBundle.loadString('lib/assets/todo_models.json');
     final lista = jsonDecode(jsondata) as List<dynamic>;
 
     return lista.map((e) => TodoModelJson.fromJson(e)).toList();
@@ -78,7 +78,7 @@ Future<void> _readJsonData() async {
                     ),
                   ],
                 ),
-                Container(  //* origem destino
+                SizedBox(  //* origem destino
                   height: 95+1,
                   width: MediaQuery.of(context).size.width - 22,
                   child: Stack(
@@ -100,7 +100,7 @@ Future<void> _readJsonData() async {
                             children: [
                               Row(
                                 children: [
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 13,
                                   ),
                                   Column(
@@ -126,7 +126,7 @@ Future<void> _readJsonData() async {
                                       color: Theme.of(context).primaryColor,
                                     ),
                                   ),
-                                  Container(
+                                  SizedBox(
                                     height: 80,
                                     child: Center(
                                       child: Column(
@@ -165,7 +165,7 @@ Future<void> _readJsonData() async {
           Container(
             child: Row(
               children: [
-                Container(  //* origem destino
+                SizedBox(  //* origem destino
                   height: 106+1,
                   width: MediaQuery.of(context).size.width - 22,
                   child: Stack(
@@ -199,7 +199,7 @@ Future<void> _readJsonData() async {
                               children: [
                                 Row(
                                   children: [
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 13,
                                     ),
                                     Column(
@@ -225,7 +225,7 @@ Future<void> _readJsonData() async {
                                         color: Theme.of(context).primaryColor,
                                       ),
                                     ),
-                                    Container(
+                                    SizedBox(
                                       height: 80,
                                       child: Center(
                                         child: Column(
@@ -267,17 +267,17 @@ Future<void> _readJsonData() async {
   @override
   Widget build(BuildContext context) {
     return _loading
-    ? Center(
+    ? const Center(
         child: CircularProgressIndicator(), // efeito de carregamento
       )
       : Scaffold(
       body: Center(
           child: Column(children: [
-            SizedBox(
+            const SizedBox(
               //* distancia entre o topo e o titulo e settings
               height: 17,
             ),
-            Container(
+            SizedBox(
               width: MediaQuery.of(context).size.width,
               height: 38.50,
               child: Stack(
@@ -290,7 +290,7 @@ Future<void> _readJsonData() async {
                           //TODO: Abrir settings
                         },
                         //TODO: diminuir o raio de feedback
-                        icon: Icon(Icons.settings)),
+                        icon: const Icon(Icons.settings)),
                   ),
                   Positioned(
                     left: 16,
@@ -309,8 +309,8 @@ Future<void> _readJsonData() async {
               height: 1,
               color: Theme.of(context).primaryColor
             ),
-            Container(
-              height: MediaQuery.of(context).size.height - 118,
+            SizedBox(
+              height: MediaQuery.of(context).size.height - 118 - 30,
               width: MediaQuery.of(context).size.width - 22,
               child: ListView(
                 children: _buildList(_listaJson),

@@ -17,7 +17,7 @@ class _PerfilTesteFetin1State extends State<PerfilTesteFetin1> {
   bool _loading = true;
 
   Future<List<UserJson>> ReadJsonData() async{
-    final jsondata = await rootBundle.loadString('perfil.json');
+    final jsondata = await rootBundle.loadString('lib/assets/perfil.json');
     final lista = jsonDecode(jsondata) as List<dynamic>;
 
     return lista.map((e) => UserJson.fromJson(e)).toList();
@@ -42,15 +42,15 @@ class _PerfilTesteFetin1State extends State<PerfilTesteFetin1> {
 
   Widget _buildPerfil(List<UserJson> perfil){
     Widget corpoPerfil;
-    corpoPerfil = Container(
+    corpoPerfil = SizedBox(
               width: MediaQuery.of(context).size.width - 22,
-              height: MediaQuery.of(context).size.height - 118,
+              height: MediaQuery.of(context).size.height - 118 - 30,
               child: ListView(
                 children: [
-                  SizedBox( //* distancia entre o titulo e o perfil
+                  const SizedBox( //* distancia entre o titulo e o perfil
                     height: 15,
                   ),
-                  Icon(
+                  const Icon(
                     size: 120,
                     Icons.account_circle_rounded  //TODO: trocar para uma foto
                   ),
@@ -60,7 +60,7 @@ class _PerfilTesteFetin1State extends State<PerfilTesteFetin1> {
                       style: Theme.of(context).textTheme.titleLarge
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 8,
                   ),
                   Container(  //* divisoria preta
@@ -68,277 +68,267 @@ class _PerfilTesteFetin1State extends State<PerfilTesteFetin1> {
                     height: 1,
                     color: Theme.of(context).primaryColor
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 22,
                   ),
-                  Container(
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: 22,
-                        ),
-                        Column(
-                          children: [
-                            Container(
-                              width: 15,
-                              height: 15,
-                              decoration: ShapeDecoration(
-                                color: Color(0xFF747DAA),
-                                shape: OvalBorder(),
-                              ),
+                  Row(
+                    children: [
+                      const SizedBox(
+                        width: 22,
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            width: 15,
+                            height: 15,
+                            decoration: const ShapeDecoration(
+                              color: Color(0xFF747DAA),
+                              shape: OvalBorder(),
                             ),
-                            SizedBox(
-                              height: 26,
+                          ),
+                          const SizedBox(
+                            height: 26,
+                          )
+                        ]
+                      ),
+                      const SizedBox(
+                        width: 6,
+                      ),
+                      Column(
+                        children: [
+                          SizedBox(
+                            height: 21,
+                            width: MediaQuery.of(context).size.width - 70,
+                            child: Positioned(
+                              child: Text(
+                                'Identificação:',
+                                style: Theme.of(context).textTheme.labelSmall
+                              )
                             )
-                          ]
-                        ),
-                        SizedBox(
-                          width: 6,
-                        ),
-                        Column(
-                          children: [
-                            Container(
-                              height: 21,
-                              width: MediaQuery.of(context).size.width - 70,
-                              child: Positioned(
-                                child: Text(
-                                  'Identificação:',
-                                  style: Theme.of(context).textTheme.labelSmall
-                                )
+                          ),
+                          SizedBox(
+                            height: 23,
+                            width: MediaQuery.of(context).size.width - 70,
+                            child: Positioned(
+                              child: Text(
+                                perfil[0].id.toString(),
+                                style: Theme.of(context).textTheme.titleMedium
                               )
-                            ),
-                            Container(
-                              height: 23,
-                              width: MediaQuery.of(context).size.width - 70,
-                              child: Positioned(
-                                child: Text(
-                                  perfil[0].id.toString(),
-                                  style: Theme.of(context).textTheme.titleMedium
-                                )
-                              )
-                            ),
-                          ],
-                        )
-                      ],
-                    )
+                            )
+                          ),
+                        ],
+                      )
+                    ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
-                  Container(
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: 22,
-                        ),
-                        Column(
-                          children: [
-                            Container(
-                              width: 15,
-                              height: 15,
-                              decoration: ShapeDecoration(
-                                color: Color(0xFF747DAA),
-                                shape: OvalBorder(),
-                              ),
+                  Row(
+                    children: [
+                      const SizedBox(
+                        width: 22,
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            width: 15,
+                            height: 15,
+                            decoration: const ShapeDecoration(
+                              color: Color(0xFF747DAA),
+                              shape: OvalBorder(),
                             ),
-                            SizedBox(
-                              height: 26,
+                          ),
+                          const SizedBox(
+                            height: 26,
+                          )
+                        ]
+                      ),
+                      const SizedBox(
+                        width: 6,
+                      ),
+                      Column(
+                        children: [
+                          SizedBox(
+                            height: 21,
+                            width: MediaQuery.of(context).size.width - 70,
+                            child: Positioned(
+                              child: Text(
+                                'Nacionalidade:',
+                                style: Theme.of(context).textTheme.labelSmall
+                              )
                             )
-                          ]
-                        ),
-                        SizedBox(
-                          width: 6,
-                        ),
-                        Column(
-                          children: [
-                            Container(
-                              height: 21,
-                              width: MediaQuery.of(context).size.width - 70,
-                              child: Positioned(
-                                child: Text(
-                                  'Nacionalidade:',
-                                  style: Theme.of(context).textTheme.labelSmall
-                                )
+                          ),
+                          SizedBox(
+                            height: 23,
+                            width: MediaQuery.of(context).size.width - 70,
+                            child: Positioned(
+                              child: Text(
+                                perfil[0].nacionalidade.toString(),
+                                style: Theme.of(context).textTheme.titleMedium
                               )
-                            ),
-                            Container(
-                              height: 23,
-                              width: MediaQuery.of(context).size.width - 70,
-                              child: Positioned(
-                                child: Text(
-                                  perfil[0].nacionalidade.toString(),
-                                  style: Theme.of(context).textTheme.titleMedium
-                                )
-                              )
-                            ),
-                          ],
-                        )
-                      ],
-                    )
+                            )
+                          ),
+                        ],
+                      )
+                    ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
-                  Container(
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: 22,
-                        ),
-                        Column(
-                          children: [
-                            Container(
-                              width: 15,
-                              height: 15,
-                              decoration: ShapeDecoration(
-                                color: Color(0xFF747DAA),
-                                shape: OvalBorder(),
-                              ),
+                  Row(
+                    children: [
+                      const SizedBox(
+                        width: 22,
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            width: 15,
+                            height: 15,
+                            decoration: const ShapeDecoration(
+                              color: Color(0xFF747DAA),
+                              shape: OvalBorder(),
                             ),
-                            SizedBox(
-                              height: 26,
+                          ),
+                          const SizedBox(
+                            height: 26,
+                          )
+                        ]
+                      ),
+                      const SizedBox(
+                        width: 6,
+                      ),
+                      Column(
+                        children: [
+                          SizedBox(
+                            height: 21,
+                            width: MediaQuery.of(context).size.width - 70,
+                            child: Positioned(
+                              child: Text(
+                                'Cargo:',
+                                style: Theme.of(context).textTheme.labelSmall
+                              )
                             )
-                          ]
-                        ),
-                        SizedBox(
-                          width: 6,
-                        ),
-                        Column(
-                          children: [
-                            Container(
-                              height: 21,
-                              width: MediaQuery.of(context).size.width - 70,
-                              child: Positioned(
-                                child: Text(
-                                  'Cargo:',
-                                  style: Theme.of(context).textTheme.labelSmall
-                                )
+                          ),
+                          SizedBox(
+                            height: 23,
+                            width: MediaQuery.of(context).size.width - 70,
+                            child: Positioned(
+                              child: Text(
+                                perfil[0].cargo.toString(),
+                                style: Theme.of(context).textTheme.titleMedium
                               )
-                            ),
-                            Container(
-                              height: 23,
-                              width: MediaQuery.of(context).size.width - 70,
-                              child: Positioned(
-                                child: Text(
-                                  perfil[0].cargo.toString(),
-                                  style: Theme.of(context).textTheme.titleMedium
-                                )
-                              )
-                            ),
-                          ],
-                        )
-                      ],
-                    )
+                            )
+                          ),
+                        ],
+                      )
+                    ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
-                  Container(
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: 22,
-                        ),
-                        Column(
-                          children: [
-                            Container(
-                              width: 15,
-                              height: 15,
-                              decoration: ShapeDecoration(
-                                color: Color(0xFF747DAA),
-                                shape: OvalBorder(),
-                              ),
+                  Row(
+                    children: [
+                      const SizedBox(
+                        width: 22,
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            width: 15,
+                            height: 15,
+                            decoration: const ShapeDecoration(
+                              color: Color(0xFF747DAA),
+                              shape: OvalBorder(),
                             ),
-                            SizedBox(
-                              height: 26,
+                          ),
+                          const SizedBox(
+                            height: 26,
+                          )
+                        ]
+                      ),
+                      const SizedBox(
+                        width: 6,
+                      ),
+                      Column(
+                        children: [
+                          SizedBox(
+                            height: 21,
+                            width: MediaQuery.of(context).size.width - 70,
+                            child: Positioned(
+                              child: Text(
+                                'Empresa:',
+                                style: Theme.of(context).textTheme.labelSmall
+                              )
                             )
-                          ]
-                        ),
-                        SizedBox(
-                          width: 6,
-                        ),
-                        Column(
-                          children: [
-                            Container(
-                              height: 21,
-                              width: MediaQuery.of(context).size.width - 70,
-                              child: Positioned(
-                                child: Text(
-                                  'Empresa:',
-                                  style: Theme.of(context).textTheme.labelSmall
-                                )
+                          ),
+                          SizedBox(
+                            height: 23,
+                            width: MediaQuery.of(context).size.width - 70,
+                            child: Positioned(
+                              child: Text(
+                                perfil[0].empresa.toString(),
+                                style: Theme.of(context).textTheme.titleMedium
                               )
-                            ),
-                            Container(
-                              height: 23,
-                              width: MediaQuery.of(context).size.width - 70,
-                              child: Positioned(
-                                child: Text(
-                                  perfil[0].empresa.toString(),
-                                  style: Theme.of(context).textTheme.titleMedium
-                                )
-                              )
-                            ),
-                          ],
-                        )
-                      ],
-                    )
+                            )
+                          ),
+                        ],
+                      )
+                    ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
-                  Container(
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: 22,
-                        ),
-                        Column(
-                          children: [
-                            Container(
-                              width: 15,
-                              height: 15,
-                              decoration: ShapeDecoration(
-                                color: Color(0xFF747DAA),
-                                shape: OvalBorder(),
-                              ),
+                  Row(
+                    children: [
+                      const SizedBox(
+                        width: 22,
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            width: 15,
+                            height: 15,
+                            decoration: const ShapeDecoration(
+                              color: Color(0xFF747DAA),
+                              shape: OvalBorder(),
                             ),
-                            SizedBox(
-                              height: 26,
+                          ),
+                          const SizedBox(
+                            height: 26,
+                          )
+                        ]
+                      ),
+                      const SizedBox(
+                        width: 6,
+                      ),
+                      Column(
+                        children: [
+                          SizedBox(
+                            height: 21,
+                            width: MediaQuery.of(context).size.width - 70,
+                            child: Positioned(
+                              child: Text(
+                                'Aeroporto base:',
+                                style: Theme.of(context).textTheme.labelSmall
+                              )
                             )
-                          ]
-                        ),
-                        SizedBox(
-                          width: 6,
-                        ),
-                        Column(
-                          children: [
-                            Container(
-                              height: 21,
-                              width: MediaQuery.of(context).size.width - 70,
-                              child: Positioned(
-                                child: Text(
-                                  'Aeroporto base:',
-                                  style: Theme.of(context).textTheme.labelSmall
-                                )
+                          ),
+                          SizedBox(
+                            height: 23,
+                            width: MediaQuery.of(context).size.width - 70,
+                            child: Positioned(
+                              child: Text(
+                                perfil[0].base.toString(),
+                                style: Theme.of(context).textTheme.titleMedium
                               )
-                            ),
-                            Container(
-                              height: 23,
-                              width: MediaQuery.of(context).size.width - 70,
-                              child: Positioned(
-                                child: Text(
-                                  perfil[0].base.toString(),
-                                  style: Theme.of(context).textTheme.titleMedium
-                                )
-                              )
-                            ),
-                          ],
-                        )
-                      ],
-                    )
+                            )
+                          ),
+                        ],
+                      )
+                    ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
                   Container(  //* divisoria preta
@@ -346,7 +336,7 @@ class _PerfilTesteFetin1State extends State<PerfilTesteFetin1> {
                     height: 1,
                     color: Theme.of(context).primaryColor
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
                 ],
@@ -358,17 +348,17 @@ class _PerfilTesteFetin1State extends State<PerfilTesteFetin1> {
   @override
   Widget build(BuildContext context) {
     return _loading 
-    ? Center(
+    ? const Center(
         child: CircularProgressIndicator(), // efeito de carregamento
       )
       :Scaffold(
       body: Center(
         child: Column(
           children: [
-            SizedBox( //* distancia entre o topo e o titulo e settings
+            const SizedBox( //* distancia entre o topo e o titulo e settings
               height: 17,
             ),
-            Container(
+            SizedBox(
               width: MediaQuery.of(context).size.width,
               height: 38.50,
               child: Stack(
@@ -381,7 +371,7 @@ class _PerfilTesteFetin1State extends State<PerfilTesteFetin1> {
                         //TODO: Abrir settings
                       }, 
                       //TODO: diminuir o raio de feedback
-                      icon: Icon(Icons.settings)),
+                      icon: const Icon(Icons.settings)),
                   ),
                   Positioned(
                     left: 16,
