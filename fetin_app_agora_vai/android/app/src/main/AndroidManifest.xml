@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="fetin_app_agora_vai"
+        android:label="Scalet Mate"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

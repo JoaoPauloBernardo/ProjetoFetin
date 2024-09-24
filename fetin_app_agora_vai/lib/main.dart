@@ -6,7 +6,7 @@ void main() async {
 
   runApp(SafeArea(  //! ISSO ESTA FAZENDO COM QUE OCORRA UM OVERFLOW
     child: MaterialApp(
-      home: SplashPage(),
+      home: const SplashPage(),
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
       themeMode: ThemeMode.system,

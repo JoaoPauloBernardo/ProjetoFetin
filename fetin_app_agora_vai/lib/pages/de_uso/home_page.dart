@@ -56,79 +56,85 @@ class _HomePageState extends State<HomePage> {
     for (int i = 0; i < items.length; i++) {
       if(dataHoje == items[i].data.toString()) {
         lista.add(
-          Column(
-            children: [
-              Container(
-                height: 1,
-                width: MediaQuery.of(context).size.width - 22,
-                color: const Color.fromARGB(255, 149, 149, 149)
-              ),
-              SizedBox(  //* origem destino
-                height: 95+1,
-                width: MediaQuery.of(context).size.width - 22,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          '   Nº voo: ${items[i].voo!.numeroDoVoo.toString()}',
-                          style: Theme.of(context).textTheme.bodyLarge
-                        ),
-                        Row(
-                          children: [
-                            const SizedBox(
-                              width: 13,
-                            ),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  items[i].voo!.aeroportoDeOrigem.toString(),
-                                  textAlign: TextAlign.center,
-                                  style: Theme.of(context).textTheme.headlineSmall
-                                ),
-                                Text(
-                                  items[i].voo!.horarioDeSaida.toString(), //* hora de chegada
-                                  textAlign: TextAlign.center,
-                                  style: Theme.of(context).textTheme.titleSmall
-                                )
-                              ],
-                            ),
-                            Container(
-                              height: 5,
-                              width: 40,
-                              color: Colors.black
-                            ),
-                            SizedBox(
-                              height: 80,
-                              child: Center(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      items[i].voo!.aeroportoDeDestino.toString(),
-                                      textAlign: TextAlign.center,
-                                      style: Theme.of(context).textTheme.headlineSmall
-                                    ),
-                                    Text(
-                                      items[i].voo!.horarioDeChegada.toString(),
-                                      textAlign: TextAlign.center,
-                                      style: Theme.of(context).textTheme.titleSmall
-                                    )
-                                  ],
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Column(
+              children: [
+                SizedBox(  //* origem destino
+                  height: 95+1,
+                  width: MediaQuery.of(context).size.width - 22,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            '   Nº voo: ${items[i].voo!.numeroDoVoo.toString()}',
+                            style: Theme.of(context).textTheme.bodyLarge
+                          ),
+                          Row(
+                            children: [
+                              const SizedBox(
+                                width: 13,
+                              ),
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    items[i].voo!.aeroportoDeOrigem.toString(),
+                                    textAlign: TextAlign.center,
+                                    style: Theme.of(context).textTheme.headlineSmall
+                                  ),
+                                  Text(
+                                    items[i].voo!.horarioDeSaida.toString(), //* hora de chegada
+                                    textAlign: TextAlign.center,
+                                    style: Theme.of(context).textTheme.titleSmall
+                                  )
+                                ],
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 20,  left: 5, right: 5), 
+                                child: Icon(
+                                  Icons.arrow_right_alt_outlined,
+                                  size: 55,
+                                  color: Theme.of(context).primaryColor,
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
+                              SizedBox(
+                                height: 80,
+                                child: Center(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        items[i].voo!.aeroportoDeDestino.toString(),
+                                        textAlign: TextAlign.center,
+                                        style: Theme.of(context).textTheme.headlineSmall
+                                      ),
+                                      Text(
+                                        items[i].voo!.horarioDeChegada.toString(),
+                                        textAlign: TextAlign.center,
+                                        style: Theme.of(context).textTheme.titleSmall
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+                Container(
+                  height: 1,
+                  width: MediaQuery.of(context).size.width - 22,
+                  color: const Color.fromARGB(255, 149, 149, 149)
+                ),
+              ],
+            ),
           ),
         );
       }
@@ -236,22 +242,22 @@ class _HomePageState extends State<HomePage> {
                                   style: Theme.of(context).textTheme.labelMedium
                                 ),
                               ),
-                              //! AQUI TEM UM BOTÃO INVISIVEL PARA ALINHAR
-                              //! AQUI TEM UM BOTÃO INVISIVEL PARA ALINHAR
-                              //! AQUI TEM UM BOTÃO INVISIVEL PARA ALINHAR
-                              //! AQUI TEM UM BOTÃO INVISIVEL PARA ALINHAR
-                              IconButton( //* botão de mais que leva para o perfil completo
-                                  onPressed: (){
-                                    //! NÃO REMOVA ESSE COMENTARIO
-                                    // Navigator.push(//* botão de 'perfil' que leva para o perfil completo
-                                    //   context,
-                                    //   MaterialPageRoute(builder: (context) => NavigationMenuPerfil()),
-                                    // );
-                                  },
-                                  color: const Color.fromARGB(0, 255, 255, 255),
-                                  padding: EdgeInsets.zero,
-                                  icon: const Icon(Icons.add)
-                              ),
+                              // //! AQUI TEM UM BOTÃO INVISIVEL PARA ALINHAR
+                              // //! AQUI TEM UM BOTÃO INVISIVEL PARA ALINHAR
+                              // //! AQUI TEM UM BOTÃO INVISIVEL PARA ALINHAR
+                              // //! AQUI TEM UM BOTÃO INVISIVEL PARA ALINHAR
+                              // IconButton( //* botão de mais que leva para o perfil completo
+                              //     onPressed: (){
+                              //       //! NÃO REMOVA ESSE COMENTARIO
+                              //       // Navigator.push(//* botão de 'perfil' que leva para o perfil completo
+                              //       //   context,
+                              //       //   MaterialPageRoute(builder: (context) => NavigationMenuPerfil()),
+                              //       // );
+                              //     },
+                              //     color: const Color.fromARGB(0, 255, 255, 255),
+                              //     padding: EdgeInsets.zero,
+                              //     icon: const Icon(Icons.add)
+                              // ),
                             ]
                           ),
                         ),
@@ -270,7 +276,11 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    
+    double appHeight = MediaQuery.of(context).size.height 
+    - AppBar().preferredSize.height 
+    - MediaQuery.of(context).padding.top 
+    - MediaQuery.of(context).padding.bottom;
+
     return _loading
     ? const Center(
         child: CircularProgressIndicator(), // efeito de carregamento
@@ -332,9 +342,9 @@ class _HomePageState extends State<HomePage> {
             ),
             SizedBox(
               width: MediaQuery.of(context).size.width - 22,
-              height: MediaQuery.of(context).size.height - 259 - 30,
+              height: appHeight - 259,
               child: ListView(
-                  children: _buildList(_listaJsonEscala),
+                  children: _buildList(_listaJsonEscala), //* monta a escala do dia
                 )
               ),
           ],

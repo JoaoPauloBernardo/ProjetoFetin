@@ -37,13 +37,18 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
+    double appHeight = MediaQuery.of(context).size.height 
+    - AppBar().preferredSize.height 
+    - MediaQuery.of(context).padding.top 
+    - MediaQuery.of(context).padding.bottom;
+
     return Scaffold(
       body: Container(  //* container eh a tela completa
         width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height - 35,
+        height: appHeight,
         padding: const EdgeInsets.symmetric(horizontal: 91),
         clipBehavior: Clip.antiAlias,
-        decoration: BoxDecoration(color: const Color.fromARGB(255, 5, 66, 116)),
+        decoration: const BoxDecoration(color: Color.fromARGB(255, 5, 66, 116)),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -51,8 +56,8 @@ class _SplashPageState extends State<SplashPage> {
           children: [
             SizedBox( //* caixa do texto central
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height - 35,
-              child: Center(
+              height: appHeight,
+              child: const Center(
                 child: Text(  //* texto central
                   'Scalet Mate',
                   textAlign: TextAlign.center,

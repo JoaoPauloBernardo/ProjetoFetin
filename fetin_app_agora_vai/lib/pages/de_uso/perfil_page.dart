@@ -41,10 +41,15 @@ class _PerfilTesteFetin1State extends State<PerfilTesteFetin1> {
   }
 
   Widget _buildPerfil(List<UserJson> perfil){
+    double appHeight = MediaQuery.of(context).size.height 
+    - AppBar().preferredSize.height 
+    - MediaQuery.of(context).padding.top 
+    - MediaQuery.of(context).padding.bottom;
+
     Widget corpoPerfil;
     corpoPerfil = SizedBox(
               width: MediaQuery.of(context).size.width - 22,
-              height: MediaQuery.of(context).size.height - 118 - 30,
+              height: appHeight - 118,
               child: ListView(
                 children: [
                   const SizedBox( //* distancia entre o titulo e o perfil

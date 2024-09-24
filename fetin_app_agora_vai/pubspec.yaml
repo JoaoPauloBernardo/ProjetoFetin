@@ -33,6 +33,7 @@ dependencies:
     sdk: flutter
   mongo_dart: ^0.7.1
   json_annotation: ^4.0.1
+  flutter_launcher_icons: ^0.14.1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -48,6 +49,12 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^4.0.0
+
+flutter_icons:
+  android: "ic_launcher"
+  ios: true
+  imagem_path: "lib/assets/images/app_icons/joia.png"
+  remove_alpha_ios: true
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
